@@ -11,9 +11,7 @@ ADD https://www.free-css.com/assets/files/free-css-templates/download/page296/li
 RUN unzip -q listrace.zip && \
     rm -f listrace.zip
 
-# Copy the extracted files into the current directory (./)
-RUN cp -r listrace/* . && \
-    rm -rf listrace
+RUN if [ -d "listrace" ]; then cp -r listrace/* . && rm -rf listrace; fi
 
 # Expose port 80 for Apache
 EXPOSE 80
