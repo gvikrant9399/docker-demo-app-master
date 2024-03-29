@@ -6,8 +6,8 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 # Download the ZIP file containing the webpage and extract its contents
-ADD https://www.free-css.com/assets/files/free-css-templates/download/page296/listrace.zip /var/www/html/
 WORKDIR /var/www/html/
+ADD https://www.free-css.com/assets/files/free-css-templates/download/page296/listrace.zip /var/www/html/
 RUN unzip -q listrace.zip && \
     rm -f listrace.zip
 
